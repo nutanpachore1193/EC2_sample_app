@@ -4,6 +4,7 @@ pipeline {
     stages{
         stage('deploy to S3'){
             steps{
+                sh 'sudo su'
                 sh 'ssh -i /home/ec2-user/bantu.pem ec2-user@3.110.204.121 -y'
                 sh 'sudo su'
                 sh 'yum update -y'
