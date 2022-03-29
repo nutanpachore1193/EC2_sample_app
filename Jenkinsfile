@@ -1,18 +1,10 @@
-pipeline {
-    agent any
-
-    stages{
-        stage('deploy to ec2'){
-            steps{        
-                sh 'cp index.html /var/www/html/'
-                
-            }
-        }
+node {
+    stage ('Git')
+    {
+        git https://github.com/kaustubhchandra/ec2-project.git
     }
-    post{
-        always{
-            cleanWs disableDeferredWipeout: true, deleteDirs: true
-        }
-    }
-
-}
+    
+    stage ('Build)
+           {
+               
+           }
