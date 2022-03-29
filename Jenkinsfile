@@ -6,7 +6,7 @@ node {
     
     stage ('Build')
            {
-               sh 'rsync -avrh index.html "ssh -o StrictHostKeyChecking=no" root@3.110.204.121:/var/www/html/'
+               sh 'scp -o StrictHostKeyChecking=no index.html root@3.110.204.121:/var/www/html/'
             
            }
 
