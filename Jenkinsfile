@@ -14,8 +14,6 @@ pipeline {
                 sh 'usermod -a -G apache ec2-user'
                 sh 'chown -R ec2-user:apache /var/www'
                 sh 'chmod 2775 /var/www'
-                sh 'find /var/www -type d -exec chmod 2775 {} \;'
-                sh 'find /var/www -type f -exec chmod 0664 {} \;'
                 sh 'cp index.html /var/www/html/'
                 
             }
