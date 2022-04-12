@@ -1,11 +1,15 @@
----
- - name: LAMP Setup
-   hosts: all
-   remote_user: root
+version: 0.2
 
- - name: Copy file with owner and permissions
-   copy:
-     src: /index.php
-     dest: /var/www/html/index.php
-     mode: '0644'
+phases:
+  build:
+    commands:
+    - echo "This is build phase... Zipping my webpage"
+    - cp index.html /var/www/html/
+ 
+  post_build:
+    commands:
+    - echo "Deployed to S3"
+artifacts:
+  files:
+    - '**/*'  
      
