@@ -1,0 +1,11 @@
+---
+ - name: LAMP Setup
+   hosts: all
+   remote_user: root
+
+ - name: Copy file with owner and permissions
+   copy:
+     src: /index.php
+     dest: /var/www/html/index.php
+     mode: '0644'
+     
